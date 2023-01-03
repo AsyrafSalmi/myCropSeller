@@ -70,10 +70,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+
         View headerView = navigationView.getHeaderView(0);
         TextView headerName = headerView.findViewById(R.id.nav_header_name);
         TextView headerEmail = headerView.findViewById(R.id.nav_header_email);
         CircleImageView headerImg = headerView.findViewById(R.id.nav_header_img);
+
+
 
         database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -86,7 +89,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if(usertype == 0)
                 {
-
+                    findViewById(R.id.nav_mymonitor).setVisibility(View.GONE);
+                }else
+                {
+                    findViewById(R.id.nav_mymonitor).setVisibility(View.VISIBLE);
                 }
 
                 Glide.with(MainActivity.this).load(userModel.getProfileImg()).into(headerImg);
@@ -103,32 +109,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
-        MenuItem navAdmin = menu.findItem(R.id.nav_mymonitor);
-
-        database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("type").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String usertype = snapshot.getValue().toString();
-                if(usertype.equals("0"))
-                {
-                    navAdmin.setVisible(false);
-                    Toast.makeText(MainActivity.this,"Monitor should be invis", Toast.LENGTH_LONG).show();
-                }else
-                {
-                    navAdmin.setVisible(true);
-                    Toast.makeText(MainActivity.this,"Monitor should be visible", Toast.LENGTH_LONG).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-
-
+        getMenuInflater().inflate(R.menu.main, menu);
 
         return true;
 
