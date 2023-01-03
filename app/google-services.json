@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "136370521604",
+    "firebase_url": "https://mycropseller-4c3b9-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mycropseller-4c3b9",
+    "storage_bucket": "mycropseller-4c3b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136370521604:android:88a334dc5b8f95968b9751",
+        "android_client_info": {
+          "package_name": "com.example.mycropseller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136370521604-15d8843kl2t1pruipr9c850ggfg9edh9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQXvH3KAJQaJpN3g8zEIbSEGUyVegUXNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136370521604-15d8843kl2t1pruipr9c850ggfg9edh9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

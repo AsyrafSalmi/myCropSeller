@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".farm_monitor">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Linear 1 start -->
+
+        <LinearLayout
+            android:id="@+id/monitor_1_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Temperature start -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/monitor_thermometer"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/thermometer" />
+
+                <LinearLayout
+                    android:id="@+id/monitor_temp_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/monitor_temp_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="40"
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="°C"
+                        android:textSize="40sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Temperature end  -->
+            <!-- Humidity start  -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/monitor_humidity"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/humidity" />
+
+                <LinearLayout
+                    android:id="@+id/monitor_humid_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/monitor_humidity">
+
+                    <TextView
+                        android:id="@+id/monitor_hump_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="40"
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="%"
+                        android:textSize="40sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- Humidity end  -->
+
+        </LinearLayout>
+        <!-- Linear 1 end -->
+
+
+        <!-- Linear 2 start -->
+
+        <LinearLayout
+            android:id="@+id/monitor_2_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/monitor_1_linearlayout"
+            android:gravity="center">
+
+            <!-- EC start -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/monitor_ECcurrent"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/eccurrent" />
+
+                <LinearLayout
+                    android:id="@+id/monitor_EC_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/monitor_EC_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="40"
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="cm/V"
+                        android:textSize="35sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- EC end  -->
+
+
+        </LinearLayout>
+        <!-- Linear 2 end -->
+
+
+        <Switch
+            android:id="@+id/farm_AutoSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:checked="false"
+            android:drawableStart="@drawable/ic_baseline_miscellaneous_services_24"
+            android:text="Fully - Automate"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/monitor_2_linearlayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

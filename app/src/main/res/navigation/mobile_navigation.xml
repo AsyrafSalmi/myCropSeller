@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.mycropseller.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.mycropseller.ui.profile.ProfileFragment"
+        android:label="@string/profile_nav"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_category"
+        android:name="com.example.mycropseller.ui.category.CategoryFragment"
+        android:label="@string/category_nav"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/nav_offers"
+        android:name="com.example.mycropseller.OffersFragment"
+        android:label="@string/offers"
+        tools:layout="@layout/fragment_offers" />
+    <fragment
+        android:id="@+id/nav_newProduct"
+        android:name="com.example.mycropseller.NewProductFragment"
+        android:label="@string/new_product"
+        tools:layout="@layout/fragment_new_product" />
+    <fragment
+        android:id="@+id/nav_myorder"
+        android:name="com.example.mycropseller.MyOrderFragment"
+        android:label="@string/my_orders"
+        tools:layout="@layout/fragment_my_order" />
+    <fragment
+        android:id="@+id/nav_mycarts"
+        android:name="com.example.mycropseller.MyCartsFragment"
+        android:label="@string/carts"
+        tools:layout="@layout/fragment_my_carts" />
+
+    <fragment
+        android:id="@+id/nav_mymonitor"
+        android:name="com.example.mycropseller.farm_monitor"
+        android:label="@string/farm_monitor"
+        tools:layout="@layout/fragment_farm_monitor" />
+</navigation>
