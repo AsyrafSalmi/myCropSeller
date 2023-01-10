@@ -50,7 +50,7 @@ public class farm_monitor extends Fragment {
         autoSwitch.setTextOn("On");
         autoSwitch.setTextOff("Off");
 
-        database.getReference().child("Temperature").addValueEventListener(new ValueEventListener() {
+        database.getReference().child("temperature").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String Tempvalue = snapshot.getValue().toString();
