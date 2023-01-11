@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -27,14 +28,13 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/monitor_thermometer"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/thermometer" />
 
@@ -62,48 +62,7 @@
             </LinearLayout>
 
             <!-- Temperature end  -->
-            <!-- Humidity start  -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/monitor_humidity"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/humidity" />
-
-                <LinearLayout
-                    android:id="@+id/monitor_humid_layout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/monitor_humidity">
-
-                    <TextView
-                        android:id="@+id/monitor_hump_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="40"
-                        android:textSize="40sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:text="%"
-                        android:textSize="40sp" />
-                </LinearLayout>
-
-            </LinearLayout>
-            <!-- Humidity end  -->
 
         </LinearLayout>
         <!-- Linear 1 end -->
@@ -132,7 +91,7 @@
                     android:id="@+id/monitor_ECcurrent"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:src="@drawable/eccurrent" />
 
@@ -165,19 +124,30 @@
         </LinearLayout>
         <!-- Linear 2 end -->
 
-
+        <Switch
+            android:id="@+id/farm_pumpSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:checked="false"
+            android:drawableStart="@drawable/ic_baseline_miscellaneous_services_24"
+            android:text="PUMP"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/monitor_2_linearlayout" />
         <Switch
             android:id="@+id/farm_AutoSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="5dp"
             android:checked="false"
             android:drawableStart="@drawable/ic_baseline_miscellaneous_services_24"
             android:text="Fully - Automate"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/monitor_2_linearlayout" />
+            app:layout_constraintTop_toBottomOf="@id/farm_pumpSwitch" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

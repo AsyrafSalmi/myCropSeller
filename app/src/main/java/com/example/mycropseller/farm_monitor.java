@@ -30,7 +30,7 @@ public class farm_monitor extends Fragment {
 
     private TextView tempValue, humpValue,EcValue;
     FirebaseDatabase database;
-    Switch autoSwitch;
+    Switch autoSwitch,pumpSwitch;
 
 
     public farm_monitor() {
@@ -43,9 +43,10 @@ public class farm_monitor extends Fragment {
 
         database = FirebaseDatabase.getInstance();
         tempValue = root.findViewById(R.id.monitor_temp_value);
-        humpValue = root.findViewById(R.id.monitor_hump_value);
+       // humpValue = root.findViewById(R.id.monitor_hump_value);
         EcValue = root.findViewById(R.id.monitor_EC_value);
         autoSwitch = root.findViewById(R.id.farm_AutoSwitch);
+        pumpSwitch = root.findViewById(R.id.farm_pumpSwitch);
 
         autoSwitch.setTextOn("On");
         autoSwitch.setTextOff("Off");
@@ -64,19 +65,19 @@ public class farm_monitor extends Fragment {
 
         });
 
-        database.getReference().child("Humidity").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String Humpvalue = snapshot.getValue().toString();
-                humpValue.setText(Humpvalue);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-
-        });
+//        database.getReference().child("Humidity").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                String Humpvalue = snapshot.getValue().toString();
+//                humpValue.setText(Humpvalue);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//
+//        });
 
         database.getReference().child("ECcurrent").addValueEventListener(new ValueEventListener() {
             @Override
@@ -106,6 +107,22 @@ public class farm_monitor extends Fragment {
                 {
                     database.child("Switch").setValue(0);
                     Toast.makeText(getContext(),"Farm is in Semi Automation Mode",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        pumpSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(pumpSwitch.isChecked())
+                {
+                    database.child("Pump").setValue(1);
+                    Toast.makeText(getContext(),"Pump is turn on",Toast.LENGTH_LONG).show();
+
+                }else
+                {
+                    database.child("Pump").setValue(0);
+                    Toast.makeText(getContext(),"Pump is turn off",Toast.LENGTH_LONG).show();
                 }
             }
         });
