@@ -90,9 +90,12 @@ public class MainActivity extends AppCompatActivity {
                 if(usertype == 0)
                 {
                     findViewById(R.id.nav_mymonitor).setVisibility(View.GONE);
+
                 }else
                 {
                     findViewById(R.id.nav_mymonitor).setVisibility(View.VISIBLE);
+                    findViewById(R.id.nav_newProduct).setVisibility(View.GONE);
+
                 }
 
                 Glide.with(MainActivity.this).load(userModel.getProfileImg()).into(headerImg);
